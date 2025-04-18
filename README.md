@@ -1,142 +1,105 @@
-<div align="center">
-  <br />
-    <a href="https://www.youtube.com/watch?v=E-fdPfRxkzQ" target="_blank">
-      <img src="public/images/readme.png" alt="Project Banner">
-    </a>
-  <br />
+# 3D Portfolio Website
 
-  <div>
-    <img src="https://img.shields.io/badge/-Three.js-black?style=for-the-badge&logo=three.js&logoColor=white" />
-    <img src="https://img.shields.io/badge/-GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  </div>
+A modern, interactive portfolio website featuring 3D elements and animations. Built with React, Three.js, and EmailJS for contact form functionality.
 
-  <h3 align="center">Interactive 3D Portfolio Website</h3>
+![Portfolio Preview](public/images/preview.png)
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+## Features
 
-## 📋 <a name="table">Table of Contents</a>
+- 🎨 Modern and responsive design
+- 🚀 Interactive 3D elements using Three.js
+- 📱 Mobile-friendly interface
+- 📧 Contact form with EmailJS integration
+- 🌟 Smooth animations and transitions
+- 🎯 SEO optimized
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets & Snippets](#links)
-6. 🚀 [More](#more)
+## Tech Stack
 
-## ⚠️ Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
-
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://www.youtube.com/watch?v=E-fdPfRxkzQ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
-
-## <a name="introduction">🤖 Introduction</a>
-
-The 3D Portfolio project is a highly engaging personal website that features animated 3D scenes, smooth camera transitions, interactive model showcases, and responsive design. It’s ideal for developers, designers, or freelancers looking to stand out in the digital crowd.
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
-
-## <a name="tech-stack">⚙️ Tech Stack</a>
-
+- React
 - Three.js
-- React Three Fiber
-- Drei
-- GSAP
+- EmailJS
 - Tailwind CSS
 - Vite
-- React 19
 
-## <a name="features">🔋 Features</a>
+## Getting Started
 
-### Features of the 3D Portfolio Project
+### Prerequisites
 
-👉 Animated 3D models and reveal animations
+- Node.js (v14 or higher)
+- npm or yarn
 
-👉 Realistic lighting and shadows
+### Installation
 
-👉 GSAP-powered scroll interactions
-
-👉 Responsive design with Tailwind CSS and Flexbox/Grid
-
-👉 Micro Interactions
-
-👉 Multi-section layout (About, Projects, Contact)
-
-👉 Mobile optimized 3D experience
-
-and many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
-
+1. Clone the repository:
 ```bash
-git clone https://github.com/adrianhajdin/3d-portfolio.git
+git clone https://github.com/yourusername/3d-portfolio.git
 cd 3d-portfolio
 ```
 
-**Installation**
-
-Install the project dependencies using npm:
-
+2. Install dependencies:
 ```bash
 npm install
+# or
+yarn install
 ```
 
-**Set Up Environment Variables**
-
-Create a new file named `.env` in the root of your project and add the following content:
-
-```env
-VITE_APP_EMAILJS_SERVICE_ID=
-VITE_APP_EMAILJS_TEMPLATE_ID=
-VITE_APP_EMAILJS_PUBLIC_KEY=
+3. Create a `.env` file:
+```bash
+cp .env.example .env
 ```
 
-Replace the placeholder values with your actual **[EmailJS](https://www.emailjs.com/)** credentials.
+4. Configure EmailJS:
+   - Sign up for an [EmailJS](https://www.emailjs.com/) account
+   - Create an email service (Gmail recommended)
+   - Create an email template
+   - Update your `.env` file with your EmailJS credentials:
+     ```
+     VITE_APP_EMAILJS_SERVICE_ID=your_service_id
+     VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
+     VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
+     ```
 
-**Running the Project**
-
+5. Start the development server:
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173/) in your browser to view the project.
+The application will be available at `http://localhost:5173`
 
+## Deployment
 
-## <a name="links">🔗 Assets and Snippets</a>
+1. Build the project:
+```bash
+npm run build
+# or
+yarn build
+```
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/pfolio25-kit)**.
+2. Deploy the `dist` folder to your preferred hosting service (Vercel, Netlify, etc.)
 
-<a href="https://jsm.dev/pfolio25-kit" target="_blank">
-  <img src="public/images/readme-video-kit.png" alt="Video Kit Banner">
-</a>
+## Contributing
 
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## <a name="more">🚀 More</a>
+## License
 
-**Advance your skills with JSM Pro Courses**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+## Acknowledgments
 
-<a href="https://beta.jsmastery.pro/" target="_blank">
-  <img src="public/images/readme-bottom.png" alt="Project Banner">
-</a>
+- [Three.js](https://threejs.org/) for 3D graphics
+- [EmailJS](https://www.emailjs.com/) for email functionality
+- [React](https://reactjs.org/) for the UI framework
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+## Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+
+Project Link: [https://github.com/yourusername/3d-portfolio](https://github.com/yourusername/3d-portfolio)

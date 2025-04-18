@@ -20,22 +20,45 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
 
     try {
-      await emailjs.sendForm(
+      // Initialize EmailJS with your public key
+      emailjs.init(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
+
+      const result = await emailjs.sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        {
+          publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+          // Add these headers to ensure proper Gmail API scope
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY}`
+          }
+        }
       );
 
-      // Reset form and stop loading
+      console.log("Email sent successfully:", result);
       setForm({ name: "", email: "", message: "" });
+      alert("Message sent successfully!");
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error Details:", {
+        code: error.code,
+        text: error.text,
+        message: error.message,
+        stack: error.stack
+      });
+      
+      // More specific error message for users
+      if (error.text?.includes('Gmail_API')) {
+        alert("There was an issue with the email service configuration. Please try again later or contact the site administrator.");
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -43,8 +66,8 @@ const Contact = () => {
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+          title="Get in Touch – Let's Connect"
+          sub="💬 Have questions or ideas? Let's talk! 🚀"
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -62,7 +85,7 @@ const Contact = () => {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What’s your good name?"
+                    placeholder="What's your good name?"
                     required
                   />
                 </div>
@@ -75,7 +98,7 @@ const Contact = () => {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="What’s your email address?"
+                    placeholder="What's your email address?"
                     required
                   />
                 </div>
