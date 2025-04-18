@@ -100,6 +100,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-MaazKhan - [@MaazKhan](https://www.linkedin.com/maaz-thecoder/)
+MaazKhan - [@MaazKhan](https://www.linkedin.com/in/maaz-thecoder)
 
 Project Link: [https://github.com/yourusername/3d-portfolio](https://github.com/yourusername/3d-portfolio)
